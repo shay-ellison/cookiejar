@@ -3,7 +3,7 @@ Ruby CookieJar
 
   **Git**:	[http://github.com/dwaite/cookiejar](http://github.com/dwaite/cookiejar)
 
-  **Author**:	David Waite 
+  **Original Author**:	David Waite 
 
 Synopsis
 --------
@@ -12,13 +12,9 @@ The Ruby CookieJar is a library to help manage client-side cookies in pure Ruby.
 
 Both Netscape/RFC 2109 cookies and RFC 2965 cookies are supported.
 
-Roadmap
--------
-
-For the Next major release, I would like to accomplish:
-
-1. Check against [RFC 6265 - HTTP State Management Mechanism][rfc6265], the latest cookie spec which came out after the initial release of cookiejar
-2. Determine better code structure to encourage alternate persistence mechanisms for cookie jars
+Fork Purpose
+------------
+To enable the default `parse_set_cookie` as well as the RFC-2965 compliant `parse_set_cookie2` to expect and process the Cookie param `Max-Age`. Gems using `set_cookie` as the default call to a `Jar`, like `Faye`, get breaking behavior if `Max-Age` is received.
 
 [rfc6265]: http://tools.ietf.org/html/rfc6265
 COPYRIGHT
