@@ -320,6 +320,8 @@ module CookieJar
             args[:secure] = true
           when :httponly
             args[:http_only] = true
+          when :"max-age"
+            args[:max_age] = keyvalue.to_i
           else
             raise InvalidCookieError.new "Unknown cookie parameter '#{key}'"
           end
